@@ -28,7 +28,7 @@ const HomePage = () => {
   },[]) // array vazio - executa apenas 1 vez
 
   return (
-    <div>
+    <div className="home">
       <h1>Últimos posts</h1>
       {post.length === 0 ?  <p>Carregando...</p> : (
         post.map((post) => (
