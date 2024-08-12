@@ -9,6 +9,7 @@ import HomePage from './routes/HomePage/HomePage.jsx'
 import NewPost from './routes/NewPost/NewPost.jsx'
 import PostComponent from './routes/PostComponent/PostComponent.jsx'
 import Adm from './routes/Adm/Adm.jsx'
+import EditPost from './routes/EditPost/EditPost.jsx'
 
 // react-router-dom
 import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
@@ -32,7 +33,12 @@ const router = createBrowserRouter([
       {
         path:"/posts/:id",
         element : <PostComponent/>
-      }
+      },
+      //rota de edição
+      {
+        path:"/posts/edit/:id",
+        element : <EditPost/>
+      },
     ]
   }
 ])

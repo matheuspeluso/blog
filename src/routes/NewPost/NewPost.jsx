@@ -49,8 +49,6 @@ const NewPost = () => {
         </div>
         <input type="submit" value="Criar Post" className='btn' />
       </form>
-
-      
     </div>
     
   )
