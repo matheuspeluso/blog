@@ -22,6 +22,17 @@ const Adm = () => {
     }
   };
 
+  //simulando uma requisição delete 
+  const deletePost = async(id) => {
+    await blogFetch.delete(`/posts/${id}`) // quando atualizar o site vai voltar pois como se trata de uma api de teste
+
+    //exlcuindo do dom
+    const filteredPosts = posts.filter((post) => post.id !== id);
+
+    setPosts(filteredPosts);
+  }
+
+
   useEffect(() => {
     getPost()
   },[])
@@ -35,7 +46,7 @@ const Adm = () => {
                 <h2>{post.title}</h2>
                 <div className="actions">
                     <Link className="btn edit-btn">Editar</Link>
-                    <button className="btn delete-btn">Excluir</button>
+                    <button className="btn delete-btn" onClick={() => deletePost(post.id)} >Excluir</button>
                 </div>
             </div>
         ))
